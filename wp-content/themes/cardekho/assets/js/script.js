@@ -15,4 +15,20 @@ jQuery(function($) {
     })
   });
 
+  // search titles in car posts
+  $('.search-button').on('click', function() {
+    search_value = $('#search').val();
+
+    $.ajax({
+      type: 'POST',
+      url: car_ajax_params.ajaxurl,
+      data: {
+        action: 'search_cars',
+        search: search_value,
+      },
+      success: function(res) {
+        $('.car-tab').html(res);
+      }
+    })
+  });
 });

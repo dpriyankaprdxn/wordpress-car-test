@@ -26,9 +26,14 @@ if (count($categories_name) > 0 ) {
           <option value ='<?php echo $c; ?>' ><?php echo $c; ?></option>
         <?php } ?>
       </select>
-    </div>
+      <aside class='search'>
+        <form method='POST' action="#FIXME">
+          <input type="text" placeholder="Search.." id='search' name="search">
+          <button class='search-button' type="button">Search</button>
+        </form>
+      </aside>
+      </div>
   </section>
-
 <?php } 
 
 $arguments= [
@@ -45,3 +50,5 @@ if($cars->have_posts()) {  ?>
     ?>
   </ul>
 <?php } ?>
+<h3>Search Result</h3>
+<ul class="car-tab cars"></ul>

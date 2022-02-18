@@ -114,9 +114,15 @@ li {
 /*=================================
   main styling starts here
 =================================*/
-.cars {
+.cars{
   display: flex;
   flex-wrap: wrap;
+}
+
+.cars-section .wrapper
+{ 
+  display: flex;
+  flex-direction: row;
 }
 
 .cars li {
@@ -128,6 +134,13 @@ li {
 .cars h3 {
   font: 20px bold;
 }
+
+.cars-section .wrapper .all-car , .cars-section .wrapper aside{
+  flex-basis: 50%;
+}
+
+aside { margin-left: 10%;}
+
 /*=================================
   main styling ends here
 =================================*/
