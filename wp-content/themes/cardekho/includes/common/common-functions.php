@@ -65,4 +65,23 @@ function post_type($post_type_name,$dashicon_icon ='dashicons-admin-post')
 }
 
 add_action( 'init', 'post_type', 0 );
+
+// custom taxonomy
+function create_custom_taxonomy($post_name , $taxonomy_name ='') {
+  if ($taxonomy_name == '')
+    $taxonomy_name = $post_name;
+
+  register_taxonomy(
+    $taxonomy_name.'_category',
+    $post_name,
+    array(
+      'label' => __( ucfirst($taxonomy_name).' Category' ),
+      'rewrite' => array( 'slug' => $taxonomy_name.'-category' ),
+      'hierarchical' => true,
+      'show_in_rest' => true
+    )
+  );
+}
+
+add_action( 'init', 'create_custom_taxonomy' );
 ?>
