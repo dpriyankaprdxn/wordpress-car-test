@@ -8,4 +8,7 @@ post_type('Car','dashicons-car');
 
 // custom taxonomy for car
 create_custom_taxonomy('car','color');
+
+// cars function
+require get_template_directory() . '/includes/pages/cars.php';
 ?>

@@ -114,7 +114,20 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.cars li {
+  padding: 10px 2%;
+  flex-direction: row;
+  flex-basis: 20%;
+}
+
+.cars h3 {
+  font: 20px bold;
+}
 /*=================================
   main styling ends here
 =================================*/
