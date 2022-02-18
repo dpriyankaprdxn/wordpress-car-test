@@ -1,0 +1,9 @@
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+
+# track these files, if they exist
+!.gitignore
+
+# track these directory
+!wp-content/
