@@ -141,6 +141,22 @@ li {
 
 aside { margin-left: 10%;}
 
+.cars li.load_more_main {
+  flex-basis: 100%;
+}
+
+.load_more_main a {
+  padding: 7px 3%;
+  background-color: #3366ff;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.load_more_main a:hover {
+  background-color: #fff;
+  color: #3366ff;
+  border: 1px solid #3366ff;
+}
 /*=================================
   main styling ends here
 =================================*/

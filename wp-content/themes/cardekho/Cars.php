@@ -38,28 +38,29 @@ if (count($categories_name) > 0 ) {
 
 $arguments= [
   'post_type' => 'Car',
-  'posts_per_page' => -1,
+  'posts_per_page' => 6,
+  'offset' => 0,
   'post_status' => 'publish',
   'orderby' => 'ID',
-  'order' => 'ASC'
+  'order' => 'ASC',
+  'tax_query' =>''
 ];
 
 $cars = new WP_Query($arguments);
 if($cars->have_posts()) {  
   $ids = array_column($cars->posts, 'ID');
-  $last_id = end($ids);
+  $id_count = count($ids);
 ?>
   <ul class="car-tab-container cars">
     <?php
       include('template-parts/car.php');
     ?>
+    <li class="load_more_main" id="load_more_main<?php echo $id_count; ?>">
+      <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more posts">Load more</a>
+</li>
   </ul>
+ 
 <?php } ?>
-<?php if ($cars->max_num_pages >1) { ?>
-  <div class="button_load_more ">
-    <a  class="loadmore "href="#FIXME">Load More</a>
-  </div>
-<?php  }?>
 
 <h3>Search Result</h3>
 <ul class="car-tab cars"></ul>
