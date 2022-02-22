@@ -1,5 +1,6 @@
 jQuery(function($) {
-    $('.all-car').on('change', function() {
+
+  $('.all-car').on('change', function() {
     let car_select_value = $(this).val();
     let id_count = 0;
     $('.load_more_main').remove();
@@ -21,13 +22,15 @@ jQuery(function($) {
   // search titles in car posts
   $('.search-button').on('click', function() {
     search_value = $('#search').val();
-
+    let selected_category = $('.all-car').val();
+    
     $.ajax({
       type: 'POST',
       url: car_ajax_params.ajaxurl,
       data: {
         action: 'search_cars',
         search: search_value,
+        selected_category: selected_category
       },
       success: function(res) {
         $('.car-tab').html(res);
@@ -38,7 +41,6 @@ jQuery(function($) {
   //load cars
   $(document).on('click','.load_more',function(){
     let selected_category = $('.all-car').val();
-    console.log(selected_category);
     let id_count = $(this).attr('id');
 
     $('.load_more').hide();

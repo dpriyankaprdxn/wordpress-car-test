@@ -42,7 +42,7 @@ $arguments= [
   'offset' => 0,
   'post_status' => 'publish',
   'orderby' => 'ID',
-  'order' => 'ASC',
+  'order' => 'desc',
   'tax_query' =>''
 ];
 
@@ -57,7 +57,7 @@ if($cars->have_posts()) {
     ?>
     <li class="load_more_main" id="load_more_main<?php echo $id_count; ?>">
       <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more posts">Load more</a>
-</li>
+    </li>
   </ul>
  
 <?php } ?>
