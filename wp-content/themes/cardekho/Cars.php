@@ -51,16 +51,20 @@ if($cars->have_posts()) {
   $ids = array_column($cars->posts, 'ID');
   $id_count = count($ids);
 ?>
-  <ul class="car-tab-container cars">
-    <?php
-      include('template-parts/car.php');
-    ?>
-    <li class="load_more_main" id="load_more_main<?php echo $id_count; ?>">
-      <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more posts">Load more</a>
-    </li>
-  </ul>
+  <div class='car-tabs wrapper'>
+    <ul class="car-tab-container cars">
+      <?php
+        include('template-parts/car.php');
+      ?>
+      <li class="load_more_main" id="load_more_main<?php echo $id_count; ?>">
+        <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more posts">Load more</a>
+      </li>
+    </ul>
+  </div>
  
 <?php } ?>
 
-<h3>Search Result</h3>
-<ul class="car-tab cars"></ul>
+<div class='search_result wrapper'>
+  <h3>Search Result</h3>
+  <ul class="car-tab cars"></ul>
+</div>

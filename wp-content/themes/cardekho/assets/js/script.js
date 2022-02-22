@@ -1,5 +1,7 @@
 jQuery(function($) {
+  $('.search_result').hide();
 
+  //filter category
   $('.all-car').on('change', function() {
     let car_select_value = $(this).val();
     let id_count = 0;
@@ -33,6 +35,8 @@ jQuery(function($) {
         selected_category: selected_category
       },
       success: function(res) {
+        $('.car-tabs').hide();
+        $('.search_result').show();
         $('.car-tab').html(res);
       }
     })
@@ -56,6 +60,12 @@ jQuery(function($) {
         $('#load_more_main'+id_count).remove();
         $('.car-tab-container').append(html);
       }
+    });
   });
-});
+
+  $(document).on('click','.all-car',function(){
+    $('.car-tabs').show();
+    $('.search_result').hide();
+  });
+
 });

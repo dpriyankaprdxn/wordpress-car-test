@@ -114,6 +114,9 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+
+.cars-section { margin-bottom: 15px;}
+
 .cars{
   display: flex;
   flex-wrap: wrap;
