@@ -131,20 +131,32 @@ header {
 .cars-section { margin-bottom: 15px;}
 
 .cars{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .cars-section .wrapper
 { 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .cars li {
   padding: 10px 2%;
-  flex-direction: row;
-  flex-basis: 20%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
 
 .cars h3 {
@@ -152,13 +164,15 @@ header {
 }
 
 .cars-section .wrapper .all-car , .cars-section .wrapper aside{
-  flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 aside { margin-left: 10%;}
 
 .cars li.load_more_main {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .load_more_main a {
@@ -175,7 +189,9 @@ aside { margin-left: 10%;}
 }
 
 .img-zoom:hover {
-  transform: scale(.9); 
+  -webkit-transform: scale(.9);
+      -ms-transform: scale(.9);
+          transform: scale(.9); 
 }
 
 .banner img { 
@@ -188,6 +204,14 @@ aside { margin-left: 10%;}
 .excerpt { font-size: 18px; }
 .discription { font-size: 15px; }
 
+.categories li{ 
+  padding: 2px 2%;
+  margin-bottom: 10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  text-transform: capitalize;
+}
 /*=================================
   main styling ends here
 =================================*/

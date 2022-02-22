@@ -3,7 +3,16 @@
   <div class="wrapper">
     <section class='car-details'>
       <?php 
-      $related_work_heading = get_field('related_work_heading');
+      $terms = get_the_terms( get_the_ID(), 'color_category' );
+
+      if ( !empty( $terms ) ) {
+      ?>
+        <ul class='categories'>
+          <?php foreach ($terms as $t)  ?>
+            <li><?php echo $t->name; ?></li>
+        </ul>
+      <?php
+      }
       $excerpt = get_field('excerpt');
       if (has_post_thumbnail()) {
       ?>
