@@ -106,7 +106,19 @@ li {
 /*=================================
   Header styling starts here
 =================================*/
+header {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  background-color: #000;
+}
 
+.header a { color: #fff;}
+
+.header li {
+  width: 10%;
+}
+
+.header a:hover { color: #ccc;}
 /*=================================
   Header styling ends here
 =================================*/  
@@ -114,6 +126,10 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+
+.home h2 {  font: 40px bold; }
+.cars-section { margin-bottom: 15px;}
+
 .cars{
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +156,37 @@ li {
 }
 
 aside { margin-left: 10%;}
+
+.cars li.load_more_main {
+  flex-basis: 100%;
+}
+
+.load_more_main a {
+  padding: 7px 3%;
+  background-color: #3366ff;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.load_more_main a:hover {
+  background-color: #fff;
+  color: #3366ff;
+  border: 1px solid #3366ff;
+}
+
+.img-zoom:hover {
+  transform: scale(.9); 
+}
+
+.banner img { 
+  margin-bottom: 15px;
+  height: 400px;
+}
+
+.car-details { padding: 0 10%;}
+.car-details h3 {  font: 30px bold; }
+.excerpt { font-size: 18px; }
+.discription { font-size: 15px; }
 
 /*=================================
   main styling ends here
