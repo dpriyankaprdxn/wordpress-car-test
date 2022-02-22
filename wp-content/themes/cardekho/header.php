@@ -12,4 +12,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body >
+  <header>
+    <div class='wrapper'>
+      <?php
+      wp_nav_menu( array( 
+        'theme_location' => 'header', 
+        'menu_class' => 'header',        
+      )); 
+      ?>
+    </div>
+  </header>
   

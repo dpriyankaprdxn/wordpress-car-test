@@ -57,7 +57,7 @@ if($cars->have_posts()) {
         include('template-parts/car.php');
       ?>
       <li class="load_more_main" id="load_more_main<?php echo $id_count; ?>">
-        <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more posts">Load more</a>
+        <a href='#FIXME' id="<?php echo $id_count; ?>" class="load_more" title="Load more">Load more</a>
       </li>
     </ul>
   </div>
@@ -68,3 +68,4 @@ if($cars->have_posts()) {
   <h3>Search Result</h3>
   <ul class="car-tab cars"></ul>
 </div>
+<?php get_footer(); ?>

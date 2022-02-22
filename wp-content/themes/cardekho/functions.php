@@ -89,6 +89,17 @@ function create_custom_taxonomy($post_name , $taxonomy_name ='')
 
 add_action( 'init', 'create_custom_taxonomy' );
 
+// header menu
+function custom_menu() {
+  register_nav_menus(
+    array(
+      'header' => _( 'Main Header' ),
+    )
+  );
+}
+
+add_action( 'init', 'custom_menu' );
+
 // for displaying car post 
 function get_car_post($cars)
 {
@@ -97,7 +108,9 @@ function get_car_post($cars)
     $image_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);       
     ?>
     <li>
-    <img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php echo $image_alt; ?>">
+    <a href='<?php echo get_permalink( $cars->ID ) ?>' class='img-zoom' title='<?php echo $cars->post_title ?>'>
+      <img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php echo $image_alt; ?>">
+    </a>
     <h3><?php echo get_the_title(); ?></h3>
     <?php if(get_field('excerpt', $cars->ID)) { ?>
     <p><?php echo get_field('excerpt', $cars->ID); ?></p>
@@ -220,5 +233,11 @@ post_type('Car','dashicons-car');
 
 // custom taxonomy for car
 create_custom_taxonomy('car','color');
+
+add_action('get_header', 'remove_admin_login_header');
+
+function remove_admin_login_header() {
+  remove_action('wp_head', '_admin_bar_bump_cb');
+}
 
 ?>
