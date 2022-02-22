@@ -64,6 +64,7 @@ jQuery(function($) {
   });
 
   $(document).on('click','.all-car',function(){
+    $('#search').val("");
     $('.car-tabs').show();
     $('.search_result').hide();
   });
