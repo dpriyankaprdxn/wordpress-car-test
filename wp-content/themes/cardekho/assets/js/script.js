@@ -23,7 +23,7 @@ jQuery(function($) {
 
   // search titles in car posts
   $('.search-button').on('click', function() {
-    search_value = $('#search').val();
+    let search_value = $('#search').val();
     let selected_category = $('.all-car').val();
     
     $.ajax({
@@ -64,9 +64,14 @@ jQuery(function($) {
   });
 
   $(document).on('click','.all-car',function(){
-    $('#search').val("");
-    $('.car-tabs').show();
-    $('.search_result').hide();
+    let search_value = $('#search').val();
+
+    if (search_value !== '') {
+      $('.search-button').click();
+    } else {
+      $('.car-tabs').show();
+      $('.search_result').hide();
+    }
   });
 
 });
